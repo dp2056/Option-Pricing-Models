@@ -1,7 +1,7 @@
-# Option-Pricing-Models
+# Option-Pricing-Models-Outputs
 
-![Screenshot One](European_Option_Output/one.png)
-![Screenshot Two](European_Option_Output/two.png)
-![Screenshot Three](European_Option_Output/three.png)
-![Screenshot Four](European_Option_Output/four.png)
-![Screenshot Five](European_Option_Output/five.png)
+<img src="European_Option_Output/one.png" width="50%" alt="Screenshot One">
+<img src="European_Option_Output/two.png" width="50%" alt="Screenshot Two">
+<img src="European_Option_Output/three.png" width="50%" alt="Screenshot Three">
+<img src="European_Option_Output/four.png" width="50%" alt="Screenshot Four">
+<img src="European_Option_Output/five.png" width="50%" alt="Screenshot Five">
