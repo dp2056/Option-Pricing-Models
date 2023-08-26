@@ -46,5 +46,5 @@ Feel free to fork the project and submit a pull request with your changes!
 ## Contact
 
 - GitHub: [@dp2056](https://github.com/dp2056)
-- LinkedIn: [https://www.linkedin.com/in/dparvadiya]
-- Email: [darshan.parvadiya.2024@anderson.ucla.edu]
+- LinkedIn: [Darshan Parvadiya](https://www.linkedin.com/in/dparvadiya)
+- Email: (darshan.parvadiya.2024@anderson.ucla.edu)
