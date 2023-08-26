@@ -13,13 +13,6 @@
 
 This repository contains implementations and outputs for various option pricing models, including European and Perpetual American options. The codebase is designed to serve as a comprehensive toolkit for financial analysts, quants, and anyone interested in option pricing.
 
-
-### Prerequisites
-
-- C++ Compiler (e.g., g++)
-- [Optional: List any libraries]
-
-
 ## Models and Outputs
 
 ### European Option
