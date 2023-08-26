@@ -1,3 +1,9 @@
+/*
+ * This program demonstrates the pricing and sensitivity analysis of European Call and Put options.
+ * It calculates option prices for multiple batches of parameters and examines how changes in asset price, 
+ * strike price, and time to maturity affect Delta and Gamma values. Divided difference method is also utilized for analysis.
+ */
+
 #include "EuropeanOption.h"
 #include "Vector.h"
 
