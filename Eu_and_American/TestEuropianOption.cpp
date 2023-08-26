@@ -1,6 +1,7 @@
 #include "EuropeanOption.h"
 #include "Vector.h"
 
+// Generate a mesh array from start to end
 std::vector<double> mesh(double start, double end, double h)
 {
 	std::vector<double> result;
@@ -11,6 +12,8 @@ std::vector<double> mesh(double start, double end, double h)
 	}
 	return result;
 }
+
+// Function to print a vector
 void Print(std::vector<double> V)
 {
 	for (int i = 0; i < V.size(); i++)
@@ -21,12 +24,11 @@ void Print(std::vector<double> V)
 	std::cout << "\n\n";
 }
 
+// Main function
 int main()
 {
-	//Group A : Set 1
-	// Use the option prices for further analysis or output to file/console
-	//Q A&B
-	//Batch 1
+    // --- Group A: Set 1 ---
+	// Initialize and calculate European Options for Batch 1
 	std::cout << "Batch 1 :" << std::endl;
 	const double S1 = 60, K1 = 65, T1 = 0.25, r1 = 0.08, sig1 = 0.3;
 	EuropeanOption Batch1;
@@ -42,7 +44,7 @@ int main()
 	std::cout << Batch1.Price(S1) << std::endl;
 	std::cout << Batch1.Check(S1) << "\n";
 	
-	//Batch 2
+	// Initialize and calculate European Options for Batch 2
 	std::cout << "Batch 2 :" << std::endl;
 	const double S2 = 100, K2 = 100, T2 = 1, sig2 = 0.2, r2 = 0;
 	EuropeanOption Batch2;
@@ -58,7 +60,7 @@ int main()
 	std::cout << Batch2.Price(S2) << std::endl;
 	std::cout << Batch2.Check(S2) << "\n";
 
-	//Batch 3
+	// Initialize and calculate European Options for Batch 3
 	std::cout << "Batch 3 :" << std::endl;
 	const double S3 = 5, K3 = 10, T3 = 1, sig3 = 0.5, r3 = 0.12;
 	EuropeanOption Batch3;
@@ -74,7 +76,7 @@ int main()
 	std::cout << Batch3.Price(S3) << std::endl;
 	std::cout << Batch3.Check(S3) << "\n";
 
-	//Batch 4
+	// Initialize and calculate European Options for Batch 4
 	std::cout << "Batch 4 :" << std::endl;
 	const double S4 = 100, K4 = 100, T4 = 30, sig4 = 0.3, r4 = 0.08;
 	EuropeanOption Batch4;
@@ -90,7 +92,7 @@ int main()
 	std::cout << Batch4.Price(S4) << std::endl;
 	std::cout << Batch4.Check(S4) << "\n\n";
 
-	//Question C
+	// Analyze option prices for a range of asset prices
 	std::vector<double> assetpricevec = mesh(S4, 120, 4);
 	OptionCalculator Monoprice;
 	std::cout << "Option Price for Monotonically increasing\nrange of asset price from 100 to 120 :\n";
@@ -100,7 +102,7 @@ int main()
 	std::cout << "Call : \n";
 	Print(Monoprice.Option(Batch4, S4, assetpricevec, 'S', 'O'));
 
-	//Question D
+	// Analyze option prices for a range of strike prices
 	std::vector<double> strikevec = mesh(K4, 120, 5);
 	std::cout << "Option Price for Monotonically increasing\nrange of strike price from 100 to 120 :\n";
 	std::cout << "Call : \n";
@@ -112,9 +114,7 @@ int main()
 
 	//Part A : Set 2
 
-	//Gamma implement using data set
-
-	//Question A
+	// Implement Gamma using dataset
 	std::cout << "Batch 5 :" << std::endl;
 	const double S5 = 105, K5 = 100, T5 = 0.5, sig5 = 0.36, r5 = 0.1;
 	EuropeanOption Batch5;
@@ -132,7 +132,7 @@ int main()
 	Batch5.optType = "P";
 	std::cout << Batch5.Delta(S5) << std::endl;
 
-	//Question B
+	// Analyze Delta for a range of asset prices
 	OptionCalculator MonoDelta;
 	std::vector<double> asstprice5 = mesh(S5, 125, 5);
 	std::cout << "\nDelta for Monotonically increasing\nrange of asset price from 100 to 120 :\n";
@@ -142,7 +142,7 @@ int main()
 	std::cout << "Call Delta : \n";
 	Print(MonoDelta.Option(Batch5, S5, asstprice5, 'S', 'D'));
 
-	//Question C
+	// Analyze Delta and Gamma for a range of times to maturity
 	OptionCalculator MonoGamma;
 	std::vector<double> Tvec = mesh(T5, 1.5, 0.2);
 	std::cout << "\nDelta for Monotonically increasing\nrange of T from 0.5 to 1.5 :\n";
@@ -154,7 +154,7 @@ int main()
 	std::cout << "\nGamma for Monotonically increasing\nrange of T from 0.5 to 1.5 :\n";
 	Print(MonoGamma.Option(Batch5, S5, Tvec, 'T', 'G'));
 
-	//Question D
+	// Analyze Delta using the Divided Difference method
 	OptionCalculator Divideddiff;
 	double h = 5.0;
 	std::vector<double> hvec = mesh(h, 25, 5);
